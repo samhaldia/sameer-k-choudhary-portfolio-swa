@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef } from 'react'; // Removed useCallback as it was unused
 
 // Data from Resume (extracted from resume.pdf)
 const resumeData = {
@@ -16,7 +16,7 @@ const resumeData = {
   experience: [
     {
       company: "Capgemini America",
-      role: "Senior Software Engineer, Financial Services",
+      role: "Senior Consultant, Financial Services",
       dates: "July 2022 - Present",
       description: [
         "Architected design and development of SEI Developer Portal using (Drupal, PostgreSQL, Nginx, APIGEE, Vagrant, SiteMinder, and PHP) focusing on scalability, performance, and security.",
@@ -244,7 +244,7 @@ const Header = () => {
       <div className="container mx-auto px-4 flex justify-between items-center flex-wrap">
         {/* Logo/Name */}
         <h1 className="text-2xl font-bold text-slate-800">
-          <a href="#" onClick={() => scrollToSection('hero')} className="hover:text-cyan-500 transition-colors">
+          <a href="#hero" onClick={(e) => { e.preventDefault(); scrollToSection('hero'); }} className="hover:text-cyan-500 transition-colors">
             {resumeData.name}
           </a>
         </h1>
@@ -279,7 +279,7 @@ const Header = () => {
             </a>
           ))}
           <a
-            href="public/Sameer-Kumar-Choudhary-Resume.pdf?text=Resume.pdf" // Placeholder for resume download
+            href="https://placehold.co/200x100/A0B2C3/FFFFFF?text=Resume.pdf" // Placeholder for resume download
             target="_blank"
             rel="noopener noreferrer"
             className="bg-cyan-500 text-white px-5 py-2 rounded-full shadow-lg hover:bg-cyan-600 transition-all duration-300 transform hover:scale-105"
@@ -301,7 +301,7 @@ const Header = () => {
             </a>
           ))}
           <a
-            href="public/Sameer-Kumar-Choudhary-Resume.pdf?text=Resume.pdf" // Placeholder for resume download
+            href="https://placehold.co/200x100/A0B2C3/FFFFFF?text=Resume.pdf" // Placeholder for resume download
             target="_blank"
             rel="noopener noreferrer"
             className="block text-center mt-4 bg-cyan-500 text-white px-5 py-2 rounded-full shadow-lg hover:bg-cyan-600 transition-all duration-300 transform hover:scale-105"
@@ -320,6 +320,8 @@ const Section = ({ id, title, children }) => {
   const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
+    const currentRef = ref.current; // Capture ref.current in a variable
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !hasAnimated) {
@@ -334,13 +336,13 @@ const Section = ({ id, title, children }) => {
       }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    if (currentRef) { // Use the captured variable
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (currentRef) { // Use the captured variable in cleanup
+        observer.unobserve(currentRef);
       }
     };
   }, [hasAnimated]);
@@ -706,6 +708,63 @@ const Contact = () => {
               </svg>
             </a>
           </div>
+        </div>
+        <div className="bg-white p-8 rounded-xl shadow-lg animate-fade-in-up animation-delay-200">
+          <h3 className="text-3xl font-bold text-slate-800 mb-6">Send Me a Message</h3>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div>
+              <label htmlFor="name" className="block text-slate-700 text-lg font-medium mb-2">Your Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all duration-200"
+                placeholder="John Doe"
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-slate-700 text-lg font-medium mb-2">Your Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all duration-200"
+                placeholder="john.doe@example.com"
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="message" className="block text-slate-700 text-lg font-medium mb-2">Your Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                value={formData.message}
+                onChange={handleChange}
+                className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all duration-200"
+                placeholder="Hello Sameer, I'd like to discuss a project..."
+                required
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              className="w-full bg-cyan-600 text-white px-6 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-cyan-700 transition-all duration-300 transform hover:scale-105"
+              disabled={formStatus === 'sending'}
+            >
+              {formStatus === 'sending' ? 'Sending...' : 'Send Message'}
+            </button>
+            {formStatus === 'success' && (
+              <p className="text-green-600 mt-4 text-center">Message sent successfully!</p>
+            )}
+            {formStatus === 'error' && (
+              <p className="text-red-600 mt-4 text-center">Failed to send message. Please try again later.</p>
+            )}
+          </form>
         </div>
       </div>
     </Section>
