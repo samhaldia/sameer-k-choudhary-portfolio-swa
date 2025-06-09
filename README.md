@@ -20,30 +20,30 @@ The portfolio site is designed to serve as a comprehensive online resume and a p
 For a typical React application, the structure would look like this:
 
 portfolio-site/
-├── public/
-│   └── index.html           # Main HTML file
-├── src/
-│   ├── App.js               # Main application component
-│   ├── index.js             # React entry point, renders App
-│   ├── data.js              # Centralized data for resume content (Experience, Skills, Projects, etc.)
-│   ├── components/          # Directory for reusable React components
-│   │   ├── Header.jsx       # Navigation bar
-│   │   ├── Hero.jsx         # Introduction section
-│   │   ├── About.jsx        # About me section
-│   │   ├── Experience.jsx   # Professional experience timeline/cards
-│   │   ├── Skills.jsx       # Skills categories
-│   │   ├── Projects.jsx     # Portfolio projects grid
-│   │   ├── Education.jsx    # Educational background
-│   │   ├── Certifications.jsx # Certifications and achievements
-│   │   └── Contact.jsx      # Contact information and form
-│   ├── assets/              # Directory for images or other static assets
-│   │   └── profile.jpg      # Placeholder profile image
-│   └── index.css            # Base CSS and Tailwind imports
-├── .gitignore               # Specifies intentionally untracked files to ignore
-├── package.json             # Project metadata and dependencies
-├── postcss.config.js        # PostCSS configuration for Tailwind
-├── tailwind.config.js       # Tailwind CSS configuration
-└── README.md                # This file
+|-- public/
+|   `-- index.html           # Main HTML file
+|-- src/
+|   |-- App.js               # Main application component
+|   |-- index.js             # React entry point, renders App
+|   |-- data.js              # Centralized data for resume content (Experience, Skills, Projects, etc.)
+|   |-- components/          # Directory for reusable React components
+|   |   |-- Header.jsx       # Navigation bar
+|   |   |-- Hero.jsx         # Introduction section
+|   |   |-- About.jsx        # About me section
+|   |   |-- Experience.jsx   # Professional experience timeline/cards
+|   |   |-- Skills.jsx       # Skills categories
+|   |   |-- Projects.jsx     # Portfolio projects grid
+|   |   |-- Education.jsx    # Educational background
+|   |   |-- Certifications.jsx # Certifications and achievements
+|   |   `-- Contact.jsx      # Contact information and form
+|   |-- assets/              # Directory for images or other static assets
+|   |   `-- profile.jpg      # Placeholder profile image
+|   `-- index.css            # Base CSS and Tailwind imports
+|-- .gitignore               # Specifies intentionally untracked files to ignore
+|-- package.json             # Project metadata and dependencies
+|-- postcss.config.js        # PostCSS configuration for Tailwind
+|-- tailwind.config.js       # Tailwind CSS configuration
+`-- README.md                # This file
 
 
 **Note**: For the purpose of providing a single, runnable immersive code block, the `data.js` content and all component definitions are currently consolidated within `App.js`. In a real-world project, you would separate these into their respective files as indicated in the structure above.
