@@ -16,7 +16,7 @@ const resumeData = {
   experience: [
     {
       company: "Capgemini America",
-      role: "Senior Consultant, Financial Services",
+      role: "Senior Software Engineer, Financial Services",
       dates: "July 2022 - Present",
       description: [
         "Architected design and development of SEI Developer Portal using (Drupal, PostgreSQL, Nginx, APIGEE, Vagrant, SiteMinder, and PHP) focusing on scalability, performance, and security.",
@@ -134,7 +134,7 @@ const resumeData = {
     dataTechnologies: ["Google Analytics", "Matomo Analytics", "Data Studio"],
     tools: ["Git", "Jira", "Bitbucket", "Confluence"],
     securityTesting: ["Veracode Static Scan", "Burp Suite"],
-    other: ["REST APIs", "DevOps practices", "Linux", "Windows"],
+    other: ["REST APIs", "DevOps practices", "Linux", "  "],
     agileMethodologies: ["Scrum", "Kanban", "SAFe"],
     softwareDesignPrinciples: ["Scalability", "Reliability", "Security", "Performance", "System Design", "Integration", "Design Patterns"],
     complianceDataPrivacy: ["GDPR", "Data Privacy", "Consent Management"],
@@ -184,9 +184,9 @@ const resumeData = {
     },
   ],
   certifications: [
-    { name: "Certified SAFE® 6 Scrum Master (SSM) | Scaled Agile, Inc. | June 2025", link: "https://www.scaledagileframework.com/scrum-master/" }, // Placeholder link
-    { name: "CAST Imaging Certified User by CAST Imaging Certification Program, July 2024", link: "https://www.castsoftware.com/certification" }, // Placeholder link
-    { name: "Design Research & Design Thinking Feb 2025", link: "#" },
+    { name: "Certified SAFE® 6 Scrum Master (SSM) | Scaled Agile, Inc. | June 2025", link: "https://www.credly.com/badges/80800461-9a60-4536-bd7a-bdd2a5df9971" }, // Placeholder link
+    { name: "CAST Imaging Certified User by CAST Imaging Certification Program, July 2024", link: "#" }, // Placeholder link
+    { name: "Design Research & Design Thinking Feb 2025", link: "https://www.linkedin.com/learning/certificates/84ad27a208675c2816b1ebe6ef70af091a6dcea82e7997ed8f0fbb2ff946100b" },
     { name: "LO- Aspiring Architect by Capgemini Global Certification Board, September 2023", link: "#" },
     { name: "Connected Manager from Capgemini + HARVARD Manage Mentor / Spark, 23rd Jan 2023", link: "#" },
     { name: "Fundamentals of Project Planning and Management by University of Virginia 2021", link: "#" },
@@ -291,7 +291,7 @@ const Header = () => {
         </nav>
 
         {/* Navigation - Mobile */}
-        <nav className={`lg:hidden w-full ${isMenuOpen ? 'block' : 'hidden'} mt-4`}>
+        <nav className={`lg:hidden w-full ${isMenuOpen ? 'block bg-gradient-to-r from-blue-600 to-cyan-500 p-4 rounded-b-lg shadow-xl' : 'hidden'} mt-4`}>
           {navItems.map(item => (
             <a
               key={item.id}
@@ -317,39 +317,47 @@ const Header = () => {
 };
 
 // Section Wrapper for Scroll Reveal Animation
-const Section = ({ id, title, children }) => {
+const Section = ({ id, title, children, disableAnimation = false }) => { // Add disableAnimation prop
   const ref = useRef(null);
-  const [hasAnimated, setHasAnimated] = useState(false);
+  // Initialize hasAnimated to true if animation is disabled, ensuring content is immediately visible.
+  const [hasAnimated, setHasAnimated] = useState(disableAnimation);
 
   useEffect(() => {
-    const currentRef = ref.current; // Capture ref.current in a variable
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !hasAnimated) {
-          setHasAnimated(true);
-          observer.unobserve(entry.target);
+    // Only set up IntersectionObserver if animation is NOT disabled for this section.
+    if (!disableAnimation) {
+      const currentRef = ref.current;
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          // If the element is intersecting and hasn't animated yet, set hasAnimated to true.
+          if (entry.isIntersecting && !hasAnimated) {
+            setHasAnimated(true);
+            // Stop observing once the animation has triggered.
+            observer.unobserve(entry.target);
+          }
+        },
+        {
+          root: null, // relative to the viewport
+          rootMargin: '0px',
+          threshold: 0.1, // Trigger when 10% of the element is visible
         }
-      },
-      {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1,
-      }
-    );
+      );
 
-    if (currentRef) { // Use the captured variable
-      observer.observe(currentRef);
+      // Start observing the element.
+      if (currentRef) {
+        observer.observe(currentRef);
+      }
+
+      // Cleanup function to unobserve when the component unmounts.
+      return () => {
+        if (currentRef) {
+          observer.unobserve(currentRef);
+        }
+      };
     }
+  }, [hasAnimated, ref, disableAnimation]); // Dependencies include disableAnimation
 
-    return () => {
-      if (currentRef) { // Use the captured variable in cleanup
-        observer.unobserve(currentRef);
-      }
-    };
-  }, [hasAnimated, ref]); // Added ref to dependency array to satisfy exhaustive-deps lint rule
-
-  const animationClasses = hasAnimated ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10';
+  // Apply animation classes based on hasAnimated state or if animation is disabled.
+  const animationClasses = disableAnimation || hasAnimated ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10';
 
   return (
     <section id={id} ref={ref} className={`py-12 md:py-16 transition-all duration-700 ease-out transform ${animationClasses}`}>
@@ -404,21 +412,21 @@ const Hero = () => {
         <div className="flex justify-center space-x-6 mt-12 animate-fade-in-up animation-delay-2000">
           {/* LinkedIn Icon */}
           <a href={resumeData.contact.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
-             className="text-white hover:text-cyan-200 transform hover:scale-125 transition-all duration-300">
+            className="text-white hover:text-cyan-200 transform hover:scale-125 transition-all duration-300">
             <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
               <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
             </svg>
           </a>
           {/* GitHub Icon */}
           <a href={resumeData.contact.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub"
-             className="text-white hover:text-cyan-200 transform hover:scale-125 transition-all duration-300">
+            className="text-white hover:text-cyan-200 transform hover:scale-125 transition-all duration-300">
             <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
               <path fillRule="evenodd" d="M12 0C5.373 0 0 5.373 0 12c0 5.302 3.438 9.799 8.207 11.387.6.111.82-.26.82-.577v-2.02c-3.338.724-4.043-1.61-4.043-1.61-.546-1.387-1.332-1.756-1.332-1.756-1.09-.745.083-.729.083-.729 1.205.085 1.838 1.24.183 1.24 1.13.084 1.75-1.03 1.75-1.895 0-1.895-1.93-1.65-2.88-1.428-.182-.158-.041-.24.129-.304.887-.142 1.815.195 2.158 1.09.816 1.838 2.535 1.303 3.125 1.144.08-.22.316-.49.608-.602-2.4-.265-4.92-1.2-4.92-5.302 0-1.17.41-2.123 1.09-2.875-.11-.265-.47-1.36.104-2.836 0 0 .89-.29 2.91 1.09.84-.233 1.73-.35 2.62-.35s1.78.117 2.62.35c2.02-1.38 2.91-1.09 2.91-1.09.577 1.476.216 2.57.104 2.836.68 0 1.09.954 1.09 2.875 0 4.11-2.52 5.037-4.92 5.302.318.275.602.82.602 1.655v2.463c0 .318.22.69.82.577C20.562 21.799 24 17.302 24 12c0-6.627-5.373-12-12-12z"/>
             </svg>
           </a>
           {/* Email Icon */}
           <a href={`mailto:${resumeData.contact.email}`} aria-label="Email"
-             className="text-white hover:text-cyan-200 transform hover:scale-125 transition-all duration-300">
+            className="text-white hover:text-cyan-200 transform hover:scale-125 transition-all duration-300">
             <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
               <path d="M2.003 5.884L10.001 11.5L18.003 5.884C17.72 5.378 17.163 5 16.5 5H3.5C2.837 5 2.28 5.378 2.003 5.884ZM2 7.373V16.5C2 17.328 2.672 18 3.5 18H16.5C17.328 18 18 17.328 18 16.5V7.373L10.001 13L2.003 7.373ZM20 5H3.5C2.672 5 2 5.672 2 6.5V17.5C2 18.328 2.672 19 3.5 19H20.5C21.328 19 22 18.328 22 17.5V6.5C22 5.672 21.328 5 20.5 5H20Z"/>
             </svg>
@@ -462,14 +470,14 @@ const About = () => {
 // Experience Section
 const Experience = () => {
   return (
-    <Section id="experience" title="Professional Experience">
-      <div className="space-y-12">
+    <Section id="experience" title="Professional Experience" disableAnimation={true}> {/* Disable animation for Experience section */}
+      <div className="space-y-12 block">
         {resumeData.experience.map((job, index) => (
           <div
             key={index}
             className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1"
           >
-            <div className="flex justify-between items-start mb-4">
+            <div className="flex justify-between items-start mb-4 flex-wrap">
               <div>
                 <h3 className="text-2xl font-bold text-slate-800">{job.company}</h3>
                 <p className="text-xl font-semibold text-cyan-600">{job.role}</p>
