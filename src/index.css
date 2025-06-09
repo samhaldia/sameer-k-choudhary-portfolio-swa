@@ -1,0 +1,62 @@
+/* Import Tailwind CSS directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global CSS styles */
+html {
+  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+body {
+  font-family: 'Inter', sans-serif; /* Apply the Inter font globally */
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
+  box-sizing: border-box; /* Ensure padding and border are included in element's total width and height */
+}
+
+/* Base container for consistent content width */
+.container {
+  max-width: 1200px; /* Custom max-width for better content flow */
+  margin-left: auto; /* Center the container */
+  margin-right: auto; /* Center the container */
+  padding-left: 1rem; /* Default horizontal padding */
+  padding-right: 1rem; /* Default horizontal padding */
+}
+
+/* Custom Keyframes for Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInTop {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes blob {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+}
+
+/* Apply animations with utility classes */
+.animate-fade-in { animation: fadeIn 1s ease-out forwards; }
+.animate-fade-in-up { animation: fadeInUp 1s ease-out forwards; }
+.animate-fade-in-top { animation: fadeInTop 1s ease-out forwards; }
+.animate-blob { animation: blob 7s infinite linear; }
+
+/* Animation delays utility classes */
+.animation-delay-500 { animation-delay: 0.5s; }
+.animation-delay-1000 { animation-delay: 1s; }
+.animation-delay-1500 { animation-delay: 1.5s; }
+.animation-delay-2000 { animation-delay: 2s; }
