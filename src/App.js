@@ -16,7 +16,7 @@ const resumeData = {
   experience: [
     {
       company: "Capgemini America",
-      role: "Senior Software Engineer, Financial Services",
+      role: "Senior Consultant, Financial Services",
       dates: "July 2022 - Present",
       description: [
         "Architected design and development of SEI Developer Portal using (Drupal, PostgreSQL, Nginx, APIGEE, Vagrant, SiteMinder, and PHP) focusing on scalability, performance, and security.",
