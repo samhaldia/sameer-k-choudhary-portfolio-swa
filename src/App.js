@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'; // Removed useCallback as it was unused
+import React, { useState, useEffect, useRef } from 'react';
 
 // Data from Resume (extracted from resume.pdf)
 const resumeData = {
@@ -16,7 +16,7 @@ const resumeData = {
   experience: [
     {
       company: "Capgemini America",
-      role: "Senior Consultant, Financial Services",
+      role: "Senior Software Engineer, Financial Services",
       dates: "July 2022 - Present",
       description: [
         "Architected design and development of SEI Developer Portal using (Drupal, PostgreSQL, Nginx, APIGEE, Vagrant, SiteMinder, and PHP) focusing on scalability, performance, and security.",
@@ -117,8 +117,6 @@ const resumeData = {
             "Development of multi-site architecture for in a single Plone instance to optimize the resource usage",
             "Developed and maintained RESTful APIs, ensuring adherence to REST principles for seamless integration and data accessibility.",
             "Automated e-Delivery of monthly newsletters to more more than 62,000 users which improved traffic",
-            "Development of Products & Services (Recaller, EOI, Ask an Expert, e-CHARAK) to provide wide range of Product and Services.",
-            "Integrated Google Analytics and reporting for review and analysis of traffic",
             "Python Trainer for students of C-DAC's DITISS (PG Diploma in IT Infrastructure Systems and Security) for consecutive 2 batches.",
             "Provided technical expertise throughout all phases of the project, ensuring accurate execution of designs and specifications.",
             "Engaged in industry forums and workshops to stay abreast of new trends and technologies, applying insights to enhance project performance.",
@@ -147,24 +145,28 @@ const resumeData = {
       description: "To automate customer experience and enquiries using Drupal and AI",
       technologies: ["AI", "Drupal", "NLP"],
       link: "#", // Placeholder
+      githubLink: "https://github.com/sameerkchoudhary/drupal-chatbot" // Placeholder
     },
     {
       title: "Twitter Tweets",
       description: "To enhance social media engagement with configurable blocks",
       technologies: ["Twitter API", "Drupal", "Blocks"],
       link: "#", // Placeholder
+      githubLink: "https://github.com/sameerkchoudhary/twitter-tweets-module" // Placeholder
     },
     {
       title: "SAUKHYAMASTHU",
       description: "A web Platform for Self-Reporting, Visualizations & Insights, COVID-19 Information to combat Pandemic",
       technologies: ["IBM Cloud", "DB2", "Python", "Flask", "IBM Watson"],
       link: "#", // Placeholder
+      githubLink: "https://github.com/sameerkchoudhary/SAUKHYAMASTHU" // Placeholder
     },
     {
       title: "PDF-Deidentification",
       description: "Web Based Tool to De-Identify or Redact PII information in PDF or Receipts before publishing",
       technologies: ["Python", "Django", "Python Libraries- pdfminer", "pdfrw", "OpenCV"],
       link: "#", // Placeholder
+      githubLink: "https://github.com/sameerkchoudhary/PDF-Deidentification" // Placeholder
     },
   ],
   education: [
@@ -182,12 +184,12 @@ const resumeData = {
     },
   ],
   certifications: [
-    "Certified SAFE® 6 Scrum Master (SSM) | Scaled Agile, Inc. | June 2025",
-    "CAST Imaging Certified User by CAST Imaging Certification Program, July 2024",
-    "Design Research & Design Thinking Feb 2025",
-    "LO- Aspiring Architect by Capgemini Global Certification Board, September 2023",
-    "Connected Manager from Capgemini + HARVARD Manage Mentor / Spark, 23rd Jan 2023",
-    "Fundamentals of Project Planning and Management by University of Virginia 2021",
+    { name: "Certified SAFE® 6 Scrum Master (SSM) | Scaled Agile, Inc. | June 2025", link: "https://www.scaledagileframework.com/scrum-master/" }, // Placeholder link
+    { name: "CAST Imaging Certified User by CAST Imaging Certification Program, July 2024", link: "https://www.castsoftware.com/certification" }, // Placeholder link
+    { name: "Design Research & Design Thinking Feb 2025", link: "#" },
+    { name: "LO- Aspiring Architect by Capgemini Global Certification Board, September 2023", link: "#" },
+    { name: "Connected Manager from Capgemini + HARVARD Manage Mentor / Spark, 23rd Jan 2023", link: "#" },
+    { name: "Fundamentals of Project Planning and Management by University of Virginia 2021", link: "#" },
   ],
   achievements: [
     "Awarded 'Most Creative Solution' at the SEI Enterprise Hackathon (Dec 2024) for an architecture design for an in-house Document Management System using Python, Django, and an open-source tech stack.",
@@ -240,18 +242,18 @@ const Header = () => {
   ];
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg py-2' : 'bg-transparent py-4'}`}>
+    <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-gradient-to-r from-blue-600 to-cyan-500 shadow-xl py-3' : 'bg-transparent py-4'}`}>
       <div className="container mx-auto px-4 flex justify-between items-center flex-wrap">
         {/* Logo/Name */}
-        <h1 className="text-2xl font-bold text-slate-800">
-          <a href="#hero" onClick={(e) => { e.preventDefault(); scrollToSection('hero'); }} className="hover:text-cyan-500 transition-colors">
+        <h1 className={`text-2xl font-bold text-white transition-colors duration-300`}>
+          <a href="#hero" onClick={(e) => { e.preventDefault(); scrollToSection('hero'); }} className="hover:text-blue-200 transition-colors">
             {resumeData.name}
           </a>
         </h1>
 
         {/* Mobile menu button */}
         <button
-          className="lg:hidden text-slate-800 focus:outline-none"
+          className={`lg:hidden focus:outline-none text-white`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle navigation"
         >
@@ -273,16 +275,16 @@ const Header = () => {
               key={item.id}
               href={`#${item.id}`}
               onClick={(e) => { e.preventDefault(); scrollToSection(item.id); }}
-              className="text-slate-800 hover:text-cyan-500 font-medium transition-colors rounded-md py-2 px-3"
+              className={`text-white hover:bg-white hover:bg-opacity-20 hover:text-white font-medium transition-all duration-300 rounded-full py-2 px-4`}
             >
               {item.name}
             </a>
           ))}
           <a
-            href="https://placehold.co/200x100/A0B2C3/FFFFFF?text=Resume.pdf" // Placeholder for resume download
+            href="https://drive.google.com/file/d/1zVi7EY5hHJIpi4uRckdgGUX0qnsNfWYy/view?usp=sharing" // Placeholder for resume download
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-cyan-500 text-white px-5 py-2 rounded-full shadow-lg hover:bg-cyan-600 transition-all duration-300 transform hover:scale-105"
+            className="bg-white text-cyan-700 px-5 py-2 rounded-full shadow-lg hover:bg-cyan-100 transition-all duration-300 transform hover:scale-105"
           >
             Download CV
           </a>
@@ -295,13 +297,13 @@ const Header = () => {
               key={item.id}
               href={`#${item.id}`}
               onClick={(e) => { e.preventDefault(); scrollToSection(item.id); setIsMenuOpen(false); }}
-              className="block text-slate-800 hover:text-cyan-500 font-medium py-2 px-4 transition-colors rounded-md"
+              className="block text-white hover:bg-white hover:bg-opacity-20 hover:text-white font-medium py-2 px-4 transition-colors rounded-md"
             >
               {item.name}
             </a>
           ))}
           <a
-            href="https://placehold.co/200x100/A0B2C3/FFFFFF?text=Resume.pdf" // Placeholder for resume download
+            href="https://drive.google.com/file/d/1zVi7EY5hHJIpi4uRckdgGUX0qnsNfWYy/view?usp=sharing" // Placeholder for resume download
             target="_blank"
             rel="noopener noreferrer"
             className="block text-center mt-4 bg-cyan-500 text-white px-5 py-2 rounded-full shadow-lg hover:bg-cyan-600 transition-all duration-300 transform hover:scale-105"
@@ -345,7 +347,7 @@ const Section = ({ id, title, children }) => {
         observer.unobserve(currentRef);
       }
     };
-  }, [hasAnimated]);
+  }, [hasAnimated, ref]); // Added ref to dependency array to satisfy exhaustive-deps lint rule
 
   const animationClasses = hasAnimated ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10';
 
@@ -418,7 +420,7 @@ const Hero = () => {
           <a href={`mailto:${resumeData.contact.email}`} aria-label="Email"
              className="text-white hover:text-cyan-200 transform hover:scale-125 transition-all duration-300">
             <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M22 6C22 5.44772 21.5523 5 21 5H3C2.44772 5 2 5.44772 2 6V18C2 18.5523 2.44772 19 3 19H21C21.5523 19 22 18.5523 22 18V6ZM21 7.27273L12 13.5L3 7.27273V17H21V7.27273Z"/>
+              <path d="M2.003 5.884L10.001 11.5L18.003 5.884C17.72 5.378 17.163 5 16.5 5H3.5C2.837 5 2.28 5.378 2.003 5.884ZM2 7.373V16.5C2 17.328 2.672 18 3.5 18H16.5C17.328 18 18 17.328 18 16.5V7.373L10.001 13L2.003 7.373ZM20 5H3.5C2.672 5 2 5.672 2 6.5V17.5C2 18.328 2.672 19 3.5 19H20.5C21.328 19 22 18.328 22 17.5V6.5C22 5.672 21.328 5 20.5 5H20Z"/>
             </svg>
           </a>
         </div>
@@ -523,7 +525,9 @@ const Skills = () => {
               {category.skills.map((skill, skillIndex) => (
                 <span
                   key={skillIndex}
-                  className="bg-cyan-100 text-cyan-700 px-4 py-1 rounded-full text-sm font-medium transition-colors duration-200 hover:bg-cyan-200"
+                  className="bg-cyan-100 text-cyan-700 px-4 py-1 rounded-full text-sm font-medium
+                             transition-all duration-300 transform hover:scale-105 hover:shadow-md
+                             hover:bg-gradient-to-r hover:from-cyan-400 hover:to-blue-500 hover:text-white"
                 >
                   {skill}
                 </span>
@@ -558,19 +562,34 @@ const Projects = () => {
                 </span>
               ))}
             </div>
-            {project.link && project.link !== '#' && (
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-cyan-600 hover:underline font-semibold flex items-center"
-              >
-                View Project
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-6l-6 6m6-6l-3.5 3.5M16 4h4v4"/>
-                </svg>
-              </a>
-            )}
+            <div className="flex flex-wrap gap-4 mt-4">
+              {project.link && project.link !== '#' && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-cyan-600 hover:underline font-semibold"
+                >
+                  View Project
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-6l-6 6m6-6l-3.5 3.5M16 4h4v4"/>
+                  </svg>
+                </a>
+              )}
+              {project.githubLink && project.githubLink !== '#' && (
+                <a
+                  href={project.githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-slate-700 hover:text-blue-600 hover:underline font-semibold"
+                >
+                  View on GitHub
+                  <svg className="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path fillRule="evenodd" d="M12 0C5.373 0 0 5.373 0 12c0 5.302 3.438 9.799 8.207 11.387.6.111.82-.26.82-.577v-2.02c-3.338.724-4.043-1.61-4.043-1.61-.546-1.387-1.332-1.756-1.332-1.756-1.09-.745.083-.729.083-.729 1.205.085 1.838 1.24.183 1.24 1.13.084 1.75-1.03 1.75-1.895 0-1.895-1.93-1.65-2.88-1.428-.182-.158-.041-.24.129-.304.887-.142 1.815.195 2.158 1.09.816 1.838 2.535 1.303 3.125 1.144.08-.22.316-.49.608-.602-2.4-.265-4.92-1.2-4.92-5.302 0-1.17.41-2.123 1.09-2.875-.11-.265-.47-1.36.104-2.836 0 0 .89-.29 2.91 1.09.84-.233 1.73-.35 2.62-.35s1.78.117 2.62.35c2.02-1.38 2.91-1.09 2.91-1.09.577 1.476.216 2.57.104 2.836.68 0 1.09.954 1.09 2.875 0 4.11-2.52 5.037-4.92 5.302.318.275.602.82.602 1.655v2.463c0 .318.22.69.82.577C20.562 21.799 24 17.302 24 12c0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                </a>
+              )}
+            </div>
           </div>
         ))}
       </div>
@@ -612,7 +631,20 @@ const Certifications = () => {
           <h3 className="text-2xl font-bold text-slate-800 mb-4">Certifications</h3>
           <ul className="list-disc list-outside ml-5 space-y-2 text-slate-700">
             {resumeData.certifications.map((cert, index) => (
-              <li key={index}>{cert}</li>
+              <li key={index}>
+                {cert.link && cert.link !== '#' ? (
+                  <a
+                    href={cert.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-cyan-600 hover:underline font-semibold"
+                  >
+                    {cert.name}
+                  </a>
+                ) : (
+                  <span>{cert.name}</span>
+                )}
+              </li>
             ))}
           </ul>
         </div>
@@ -673,7 +705,9 @@ const Contact = () => {
               {resumeData.contact.name}
             </p>
             <p className="flex items-center">
-              <svg className="w-6 h-6 text-cyan-500 mr-3" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              <svg className="w-6 h-6 text-cyan-500 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M2.003 5.884L10.001 11.5L18.003 5.884C17.72 5.378 17.163 5 16.5 5H3.5C2.837 5 2.28 5.378 2.003 5.884ZM2 7.373V16.5C2 17.328 2.672 18 3.5 18H16.5C17.328 18 18 17.328 18 16.5V7.373L10.001 13L2.003 7.373ZM20 5H3.5C2.672 5 2 5.672 2 6.5V17.5C2 18.328 2.672 19 3.5 19H20.5C21.328 19 22 18.328 22 17.5V6.5C22 5.672 21.328 5 20.5 5H20Z"/>
+              </svg>
               <a href={`mailto:${resumeData.contact.email}`} className="text-cyan-600 hover:underline">{resumeData.contact.email}</a>
             </p>
             <p className="flex items-center">
@@ -704,7 +738,7 @@ const Contact = () => {
             <a href={`mailto:${resumeData.contact.email}`} aria-label="Email"
                className="text-slate-700 hover:text-cyan-500 transform hover:scale-125 transition-all duration-300">
               <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M22 6C22 5.44772 21.5523 5 21 5H3C2.44772 5 2 5.44772 2 6V18C2 18.5523 2.44772 19 3 19H21C21.5523 19 22 18.5523 22 18V6ZM21 7.27273L12 13.5L3 7.27273V17H21V7.27273Z"/>
+                <path d="M2.003 5.884L10.001 11.5L18.003 5.884C17.72 5.378 17.163 5 16.5 5H3.5C2.837 5 2.28 5.378 2.003 5.884ZM2 7.373V16.5C2 17.328 2.672 18 3.5 18H16.5C17.328 18 18 17.328 18 16.5V7.373L10.001 13L2.003 7.373ZM20 5H3.5C2.672 5 2 5.672 2 6.5V17.5C2 18.328 2.672 19 3.5 19H20.5C21.328 19 22 18.328 22 17.5V6.5C22 5.672 21.328 5 20.5 5H20Z"/>
               </svg>
             </a>
           </div>
