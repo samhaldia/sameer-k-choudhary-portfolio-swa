@@ -16,7 +16,7 @@ const resumeData = {
   experience: [
     {
       company: "Capgemini America",
-      role: "Senior Consultant, Financial Services",
+      role: "Senior Software Engineer, Financial Services",
       dates: "July 2022 - Present",
       description: [
         "Architected design and development of SEI Developer Portal using (Drupal, PostgreSQL, Nginx, APIGEE, Vagrant, SiteMinder, and PHP) focusing on scalability, performance, and security.",
@@ -125,19 +125,88 @@ const resumeData = {
     }
   ],
   skills: {
-    languages: ["Python", "PHP", "JavaScript", "React"],
-    databases: ["MySQL", "PostgreSQL", "MongoDB"],
-    frameworks: ["Django", "Symphony", "Flask", "CakePHP"],
-    cmsLms: ["Drupal (10, 9, 8, 7)", "WordPress", "Moodle", "Plone", "Joomla"],
-    cloudComputing: ["Azure"],
-    aiMl: ["NLP", "Scikit-Learn", "LangChain", "LangGraph", "Matplotlib", "Streamlit", "Web Crawling (Scrapy, Beautifulsoup, Selenium)"],
-    dataTechnologies: ["Google Analytics", "Matomo Analytics", "Data Studio"],
-    tools: ["Git", "Jira", "Bitbucket", "Confluence"],
-    securityTesting: ["Veracode Static Scan", "Burp Suite"],
-    other: ["REST APIs", "DevOps practices", "Linux", "  "],
-    agileMethodologies: ["Scrum", "Kanban", "SAFe"],
-    softwareDesignPrinciples: ["Scalability", "Reliability", "Security", "Performance", "System Design", "Integration", "Design Patterns"],
-    complianceDataPrivacy: ["GDPR", "Data Privacy", "Consent Management"],
+    languages: [
+      { name: "Python" },
+      { name: "PHP" },
+      { name: "JavaScript" },
+      { name: "React", status: "developing" },
+      { name: "Angular", status: "developing" }, // Example: Go language is being developed
+      { name: "TypeScript", status: "developing" } // Example: TypeScript is being developed
+    ],
+    databases: [
+      { name: "MySQL" },
+      { name: "PostgreSQL" },
+      { name: "MongoDB" }
+    ],
+    frameworks: [
+      { name: "Django" },
+      { name: "Symphony" },
+      { name: "Flask" },
+      { name: "CakePHP" }
+    ],
+    cmsLms: [
+      { name: "Drupal (10, 9, 8, 7)" },
+      { name: "WordPress" },
+      { name: "Moodle" },
+      { name: "Plone" },
+      { name: "Joomla" }
+    ],
+    cloudComputing: [
+      { name: "Azure", status: "developing" },
+    ],
+    aiMl: [
+      { name: "NLP" },
+      { name: "Scikit-Learn" },
+      { name: "LangChain" },
+      { name: "LangGraph" },
+      { name: "Matplotlib" },
+      { name: "Streamlit" },
+      { name: "Web Crawling (Scrapy, Beautifulsoup, Selenium)" }
+    ],
+    dataTechnologies: [
+      { name: "Google Analytics" },
+      { name: "Matomo Analytics" },
+      { name: "Data Studio" }
+    ],
+    tools: [
+      { name: "Git" },
+      { name: "Jira" },
+      { name: "Bitbucket" },
+      { name: "Confluence" },
+	  { name: "Composer" },
+	  { name: "Drush" }
+    ],
+	operatingsystems: [
+	  { name: "Linux" },
+	  { name: "Windows" }
+	],
+    securityTesting: [
+      { name: "Veracode Static Scan" },
+      { name: "Burp Suite" }
+    ],
+    apis: [
+      { name: "REST APIs" }
+    ],
+    agileMethodologies: [
+      { name: "Scrum" },
+      { name: "Kanban" },
+      { name: "SAFe" }
+    ],
+    softwareDesignPrinciples: [
+	  { name: "DevOps practices" },
+      { name: "Scalability" },
+      { name: "Reliability" },
+      { name: "Security" },
+      { name: "Performance" },
+      { name: "System Design" },
+      { name: "Integration" },
+      { name: "Design Patterns" }
+    ],
+    complianceDataPrivacy: [
+      { name: "GDPR" },
+      { name: "Data Privacy" },
+      { name: "Consent Management" }
+    ],
   },
   projects: [
     {
@@ -185,23 +254,23 @@ const resumeData = {
   ],
   certifications: [
     { name: "Certified SAFE® 6 Scrum Master (SSM) | Scaled Agile, Inc. | June 2025", link: "https://www.credly.com/badges/80800461-9a60-4536-bd7a-bdd2a5df9971" }, // Placeholder link
-    { name: "CAST Imaging Certified User by CAST Imaging Certification Program, July 2024", link: "#" }, // Placeholder link
-    { name: "Design Research & Design Thinking Feb 2025", link: "https://www.linkedin.com/learning/certificates/84ad27a208675c2816b1ebe6ef70af091a6dcea82e7997ed8f0fbb2ff946100b" },
-    { name: "LO- Aspiring Architect by Capgemini Global Certification Board, September 2023", link: "#" },
-    { name: "Connected Manager from Capgemini + HARVARD Manage Mentor / Spark, 23rd Jan 2023", link: "#" },
-    { name: "Fundamentals of Project Planning and Management by University of Virginia 2021", link: "#" },
+    { name: "CAST Imaging Certified User by CAST Imaging Certification Program, July 2024", link: "https://www.linkedin.com/in/sameer-kumar-choudhary/details/certifications/1737771780845/single-media-viewer/?type=DOCUMENT&profileId=ACoAAA33a3wBz445wLTvH4Q0Jw11pnoGqNQ2MgY" }, // Placeholder link
+    { name: "Design Research & Design Thinking Feb 2025", link: "#" },
+    { name: "LO- Aspiring Architect by Capgemini Global Certification Board, September 2023", link: "https://www.linkedin.com/in/sameer-kumar-choudhary/details/certifications/1737771329467/single-media-viewer/?type=DOCUMENT&profileId=ACoAAA33a3wBz445wLTvH4Q0Jw11pnoGqNQ2MgY" },
+    { name: "Connected Manager from Capgemini + HARVARD Manage Mentor / Spark, 23rd Jan 2023", link: "https://www.linkedin.com/in/sameer-kumar-choudhary/details/certifications/1737770764019/single-media-viewer/?type=IMAGE&profileId=ACoAAA33a3wBz445wLTvH4Q0Jw11pnoGqNQ2MgY" },
+    { name: "Fundamentals of Project Planning and Management by University of Virginia 2021", link: "https://www.coursera.org/account/accomplishments/verify/KUTHXP6347VU" },
   ],
   achievements: [
-    "Awarded 'Most Creative Solution' at the SEI Enterprise Hackathon (Dec 2024) for an architecture design for an in-house Document Management System using Python, Django, and an open-source tech stack.",
-    "Awarded 'Time to Market Solution' at the SEI AI-Thon (Nov 2024) for automating open-source library requests and Infosec approvals using Azure OpenAI, Streamlit, LangChain, and SharePoint API.",
-    "Awarded 'Time to Market Solution' at the SEI Enterprise Hackathon (June 2024) for Sales Funnel enabled Demo Experience Platform with capability to experience the Products and Offerings on demand.",
-    "CPR/First-Aid and Blood-Borne Pathogens Training in accordance with American Heart Association Heartsaver First Aid CPR AED Program, Nov 2024",
-    "Contributed to the successful planning and execution of multiple Technology Events for over 200 attendees",
-    "Participated in building COVID-19 Web Based Solutions at IBM Call for Code 2020 using AI Python, Django, IBM Watson, IBM DB2",
-    "Capgemini Art from Waste 2019 Winner",
-    "Tech-Fiesta Capgemini 2019: Bagged Gold category Winning Award in Capgemini Tech-Fiesta Hackathon 2019 for building a Drowsiness detection web/mobile app for Drivers using Python, OpenCV, Dango, Live Stream app",
-    "Participated in Call for Code IBM 2019 on Disaster Recovery Management using Artificial Intelligence using Python, Django, Computer Vision, IBM Watson, IBM DB2",
-    "Presented Paper at IACC-2016: Certificate of Appreciation for presenting a paper on Simple and Secure OTP based Authentication Mechanism for Content Management Systems - Plone as a case in 6th IEEE International Advance Computing Conference (IACC-2016)",
+    { name: "Awarded 'Most Creative Solution' at the SEI Enterprise Hackathon (Dec 2024) for an architecture design for an in-house Document Management System using Python, Django, and an open-source tech stack.", link: "#" },
+    { name: "Awarded 'Time to Market Solution' at the SEI AI-Thon (Nov 2024) for automating open-source library requests and Infosec approvals using Azure OpenAI, Streamlit, LangChain, and SharePoint API.", link: "#" },
+    { name: "Awarded 'Time to Market Solution' at the SEI Enterprise Hackathon (June 2024) for Sales Funnel enabled Demo Experience Platform with capability to experience the Products and Offerings on demand.", link: "#" },
+    { name: "CPR/First-Aid and Blood-Borne Pathogens Training in accordance with American Heart Association Heartsaver First Aid CPR AED Program, Nov 2024", link: "https://ecards.heart.org/api/relay/v1/ecard/getfullpdf?eCardUId=0518D41E-1931-4A02-9213-ACBA6BB205A4&langId=1" },
+    { name: "Contributed to the successful planning and execution of multiple Technology Events for over 200 attendees", link: "#" },
+    { name: "Participated in building COVID-19 Web Based Solutions at IBM Call for Code 2020 using AI Python, Django, IBM Watson, IBM DB2", link: "https://github.com/samhaldia/SAUKHYAMASTHU" },
+    { name: "Capgemini Art from Waste 2019 Winner", link: "https://www.linkedin.com/in/sameer-kumar-choudhary/details/honors/1749843396189/single-media-viewer?type=DOCUMENT&profileId=ACoAAA33a3wBz445wLTvH4Q0Jw11pnoGqNQ2MgY&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_honors_details%3BT9aQ0KmtQ5aFkd%2BY212sVw%3D%3D" },
+    { name: "Tech-Fiesta Capgemini 2019: Bagged Gold category Winning Award in Capgemini Tech-Fiesta Hackathon 2019 for building a Drowsiness detection web/mobile app for Drivers using Python, OpenCV, Dango, Live Stream app", link: "linkedin.com/in/sameer-kumar-choudhary/details/honors/1749842791443/single-media-viewer?type=IMAGE&profileId=ACoAAA33a3wBz445wLTvH4Q0Jw11pnoGqNQ2MgY&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_honors_details%3BxcMhyu42TiG0wO5m4Kxjlw%3D%3D" },
+    { name: "Participated in Call for Code IBM 2019 on Disaster Recovery Management using Artificial Intelligence using Python, Django, Computer Vision, IBM Watson, IBM DB2", link: "https://www.linkedin.com/in/sameer-kumar-choudhary/details/certifications/1749844700753/single-media-viewer?type=IMAGE&profileId=ACoAAA33a3wBz445wLTvH4Q0Jw11pnoGqNQ2MgY&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BSajXHgzCR5S74nyZIymSkg%3D%3D" },
+    { name: "Presented Paper at IACC-2016: Certificate of Appreciation for presenting a paper on Simple and Secure OTP based Authentication Mechanism for Content Management Systems - Plone as a case in 6th IEEE International Advance Computing Conference (IACC-2016)", link: "https://www.linkedin.com/in/sameer-kumar-choudhary/details/honors/1749843862039/single-media-viewer?type=IMAGE&profileId=ACoAAA33a3wBz445wLTvH4Q0Jw11pnoGqNQ2MgY&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_honors_details%3BT9aQ0KmtQ5aFkd%2BY212sVw%3D%3D" },
   ],
 };
 
@@ -242,18 +311,19 @@ const Header = () => {
   ];
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-gradient-to-r from-blue-600 to-cyan-500 shadow-xl py-3' : 'bg-transparent py-4'}`}>
+    // The header will always have a subtle shadow for better definition, transitioning color on scroll
+    <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-gradient-to-r from-blue-600 to-cyan-500 shadow-xl py-3' : 'bg-gradient-to-r from-blue-600 to-cyan-500 shadow-md py-4'}`}>
       <div className="container mx-auto px-4 flex justify-between items-center flex-wrap">
-        {/* Logo/Name */}
+        {/* Logo/Name: Changed to "Portfolio" to avoid name duplication with the Hero section */}
         <h1 className={`text-2xl font-bold text-white transition-colors duration-300`}>
           <a href="#hero" onClick={(e) => { e.preventDefault(); scrollToSection('hero'); }} className="hover:text-blue-200 transition-colors">
-            {resumeData.name}
+            Portfolio
           </a>
         </h1>
 
         {/* Mobile menu button */}
         <button
-          className={`lg:hidden focus:outline-none text-white`}
+          className={`lg:hidden focus:outline-none text-white`} // Always white for visibility against any header background
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle navigation"
         >
@@ -275,6 +345,8 @@ const Header = () => {
               key={item.id}
               href={`#${item.id}`}
               onClick={(e) => { e.preventDefault(); scrollToSection(item.id); }}
+              // Nav links are always white for better contrast with the header's potential blue background
+              // Hover effect provides a subtle white semi-transparent background and text remains white for consistency.
               className={`text-white hover:bg-white hover:bg-opacity-20 hover:text-white font-medium transition-all duration-300 rounded-full py-2 px-4`}
             >
               {item.name}
@@ -317,46 +389,39 @@ const Header = () => {
 };
 
 // Section Wrapper for Scroll Reveal Animation
-const Section = ({ id, title, children, disableAnimation = false }) => { // Add disableAnimation prop
+const Section = ({ id, title, children, disableAnimation = false }) => {
   const ref = useRef(null);
-  // Initialize hasAnimated to true if animation is disabled, ensuring content is immediately visible.
   const [hasAnimated, setHasAnimated] = useState(disableAnimation);
 
   useEffect(() => {
-    // Only set up IntersectionObserver if animation is NOT disabled for this section.
     if (!disableAnimation) {
       const currentRef = ref.current;
       const observer = new IntersectionObserver(
         ([entry]) => {
-          // If the element is intersecting and hasn't animated yet, set hasAnimated to true.
           if (entry.isIntersecting && !hasAnimated) {
             setHasAnimated(true);
-            // Stop observing once the animation has triggered.
             observer.unobserve(entry.target);
           }
         },
         {
-          root: null, // relative to the viewport
+          root: null,
           rootMargin: '0px',
-          threshold: 0.1, // Trigger when 10% of the element is visible
+          threshold: 0.1,
         }
       );
 
-      // Start observing the element.
       if (currentRef) {
         observer.observe(currentRef);
       }
 
-      // Cleanup function to unobserve when the component unmounts.
       return () => {
         if (currentRef) {
           observer.unobserve(currentRef);
         }
       };
     }
-  }, [hasAnimated, ref, disableAnimation]); // Dependencies include disableAnimation
+  }, [hasAnimated, ref, disableAnimation]);
 
-  // Apply animation classes based on hasAnimated state or if animation is disabled.
   const animationClasses = disableAnimation || hasAnimated ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10';
 
   return (
@@ -386,7 +451,8 @@ const Hero = () => {
       </div>
 
       <div className="relative z-10 text-center px-4">
-        <h1 className="text-5xl md:text-7xl font-extrabold mb-4 animate-fade-in-top">
+        {/* Adjusted font size for the name in Hero section */}
+        <h1 className="text-4xl md:text-6xl font-extrabold mb-4 pt-8 animate-fade-in-top">
           {resumeData.name}
         </h1>
         <p className="text-xl md:text-2xl font-light mb-8 animate-fade-in animation-delay-500">
@@ -409,7 +475,8 @@ const Hero = () => {
             Contact Me
           </button>
         </div>
-        <div className="flex justify-center space-x-6 mt-12 animate-fade-in-up animation-delay-2000">
+        {/* Ensured adequate bottom padding for social icons */}
+        <div className="flex justify-center space-x-6 mt-12 pb-8 animate-fade-in-up animation-delay-2000">
           {/* LinkedIn Icon */}
           <a href={resumeData.contact.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
             className="text-white hover:text-cyan-200 transform hover:scale-125 transition-all duration-300">
@@ -504,11 +571,12 @@ const Skills = () => {
     { title: "Frameworks", skills: resumeData.skills.frameworks },
     { title: "CMS/LMS", skills: resumeData.skills.cmsLms },
     { title: "Cloud Computing", skills: resumeData.skills.cloudComputing },
-    { title: "AI/ML", skills: resumeData.skills.aiMl },
+    { title: "AI/ML(Developing)", skills: resumeData.skills.aiMl },
     { title: "Data Technologies", skills: resumeData.skills.dataTechnologies },
     { title: "Tools", skills: resumeData.skills.tools },
+	{ title: "Operating Systems", skills: resumeData.skills.operatingsystems },
     { title: "Security Testing Tools", skills: resumeData.skills.securityTesting },
-    { title: "Other Technologies", skills: resumeData.skills.other },
+    { title: "APIs", skills: resumeData.skills.apis },
     { title: "Agile Methodologies", skills: resumeData.skills.agileMethodologies },
     { title: "Software Design Principles", skills: resumeData.skills.softwareDesignPrinciples },
     { title: "Compliance and Data Privacy", skills: resumeData.skills.complianceDataPrivacy },
@@ -533,11 +601,17 @@ const Skills = () => {
               {category.skills.map((skill, skillIndex) => (
                 <span
                   key={skillIndex}
-                  className="bg-cyan-100 text-cyan-700 px-4 py-1 rounded-full text-sm font-medium
-                             transition-all duration-300 transform hover:scale-105 hover:shadow-md
-                             hover:bg-gradient-to-r hover:from-cyan-400 hover:to-blue-500 hover:text-white"
+                  // Check if skill is an object and has a status, otherwise assume it's a string
+                  className={`px-4 py-1 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-md cursor-pointer
+                             ${skill.status === 'developing'
+                                ? 'bg-yellow-100 text-yellow-800 hover:bg-yellow-200 hover:text-yellow-900' // Different style for developing skills
+                                : 'bg-cyan-100 text-cyan-700 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-blue-500 hover:text-white'
+                             }`}
                 >
-                  {skill}
+                  {typeof skill === 'object' ? skill.name : skill}
+                  {skill.status === 'developing' && (
+                    <span className="ml-1 text-xs font-semibold">(Developing)</span>
+                  )}
                 </span>
               ))}
             </div>
@@ -564,7 +638,8 @@ const Projects = () => {
               {project.technologies.map((tech, i) => (
                 <span
                   key={i}
-                  className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium"
+                  className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium
+                             transition-all duration-300 hover:scale-105 hover:bg-cyan-500 hover:text-white cursor-pointer"
                 >
                   {tech}
                 </span>
@@ -659,8 +734,23 @@ const Certifications = () => {
         <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
           <h3 className="text-2xl font-bold text-slate-800 mb-4">Achievements</h3>
           <ul className="list-disc list-outside ml-5 space-y-2 text-slate-700">
+            {/* Iterating over achievements with potential links */}
             {resumeData.achievements.map((achieve, index) => (
-              <li key={index}>{achieve}</li>
+              <li key={index}>
+                {/* Conditionally render as a link if 'link' property exists and is not '#' */}
+                {achieve.link && achieve.link !== '#' ? (
+                  <a
+                    href={achieve.link}
+                    target="_blank" // Opens in a new tab
+                    rel="noopener noreferrer" // Security best practice for target="_blank"
+                    className="text-cyan-600 hover:underline font-semibold"
+                  >
+                    {achieve.name}
+                  </a>
+                ) : (
+                  <span>{achieve.name}</span>
+                )}
+              </li>
             ))}
           </ul>
         </div>
@@ -835,8 +925,9 @@ function App() {
   return (
     <div className="font-sans antialiased text-slate-800 bg-gray-50">
       <Header />
-      <main>
+      <main className="pt-24"> {/* Adjusted padding to ensure no content is hidden behind the fixed header */}
         <Hero />
+        {/* The About section now has a distinct background color */}
         <About />
         <Experience />
         <Skills />
