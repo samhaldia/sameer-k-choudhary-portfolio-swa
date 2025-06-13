@@ -511,7 +511,7 @@ const About = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
         <div className="lg:col-span-1 flex justify-center lg:justify-end">
           <img
-            src="https://placehold.co/300x300/A0B2C3/FFFFFF?text=Profile+Picture" // Placeholder image
+            src="/images/profile-pic.jpg" // Placeholder image
             alt="Sameer Kumar Choudhary"
             className="rounded-full shadow-lg w-64 h-64 object-cover animate-fade-in transform hover:scale-105 transition-transform duration-500"
           />
