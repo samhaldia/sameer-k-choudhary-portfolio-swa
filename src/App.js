@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 
+// Google Analytics Measurement ID - REPLACE THIS WITH YOUR ACTUAL GA MEASUREMENT ID
+const GA_MEASUREMENT_ID = 'YOUR_GA_MEASUREMENT_ID'; // Example: 'G-XXXXXXXXXX'
+
 // Data from Resume (extracted from resume.pdf)
 const resumeData = {
   name: "Sameer Kumar Choudhary",
@@ -923,6 +926,32 @@ const Footer = () => {
 
 // Main App Component
 function App() {
+  // Google Analytics setup
+  useEffect(() => {
+    if (GA_MEASUREMENT_ID && GA_MEASUREMENT_ID !== 'YOUR_GA_MEASUREMENT_ID') {
+      // Load Google Analytics script
+      const script = document.createElement('script');
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+      script.async = true;
+      document.head.appendChild(script);
+
+      script.onload = () => {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', GA_MEASUREMENT_ID);
+        // Initial page view tracking
+        gtag('event', 'page_view', {
+          page_title: document.title,
+          page_location: window.location.href,
+          page_path: window.location.pathname
+        });
+      };
+    } else {
+      console.warn("Google Analytics Measurement ID is not set. Please replace 'YOUR_GA_MEASUREMENT_ID' with your actual GA ID.");
+    }
+  }, []); // Empty dependency array means this runs once on mount
+  
   return (
     <div className="font-sans antialiased text-slate-800 bg-gray-50">
       <Header />
