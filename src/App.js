@@ -6,7 +6,8 @@ const resumeData = {
   title: "Senior Web Application Architect & Consultant",
   summary: "Highly motivated Senior Web Application Architect & Consultant with over 9+ years of experience in architecting and delivering robust, scalable web solutions. Expertise in Python, PHP, and various CMS/LMS platforms, with a strong foundation in Azure cloud. Passionate about AI/ML and data technologies to build innovative, data-driven solutions. Proven ability to lead cross-functional teams in agile environments.",
   contact: {
-    address: "1109 Harvest Lane Phoenixville PA-19460",
+	name: "Sameer Kumar Choudhary",
+    address: "Harvest Lane Phoenixville PA-19460",
     mobile: "+1 (484) 782-8476",
     email: "sameerkchoudhary14@gmail.com",
     linkedin: "https://www.linkedin.com/in/sameerkchoudhary14", // Placeholder - please replace with actual LinkedIn URL
@@ -255,7 +256,7 @@ const resumeData = {
   certifications: [
     { name: "Certified SAFE® 6 Scrum Master (SSM) | Scaled Agile, Inc. | June 2025", link: "https://www.credly.com/badges/80800461-9a60-4536-bd7a-bdd2a5df9971" }, // Placeholder link
     { name: "CAST Imaging Certified User by CAST Imaging Certification Program, July 2024", link: "https://www.linkedin.com/in/sameer-kumar-choudhary/details/certifications/1737771780845/single-media-viewer/?type=DOCUMENT&profileId=ACoAAA33a3wBz445wLTvH4Q0Jw11pnoGqNQ2MgY" }, // Placeholder link
-    { name: "Design Research & Design Thinking Feb 2025", link: "#" },
+    { name: "Design Research & Design Thinking Feb 2025", link: "https://lnkd.in/euKvPAWd" },
     { name: "LO- Aspiring Architect by Capgemini Global Certification Board, September 2023", link: "https://www.linkedin.com/in/sameer-kumar-choudhary/details/certifications/1737771329467/single-media-viewer/?type=DOCUMENT&profileId=ACoAAA33a3wBz445wLTvH4Q0Jw11pnoGqNQ2MgY" },
     { name: "Connected Manager from Capgemini + HARVARD Manage Mentor / Spark, 23rd Jan 2023", link: "https://www.linkedin.com/in/sameer-kumar-choudhary/details/certifications/1737770764019/single-media-viewer/?type=IMAGE&profileId=ACoAAA33a3wBz445wLTvH4Q0Jw11pnoGqNQ2MgY" },
     { name: "Fundamentals of Project Planning and Management by University of Virginia 2021", link: "https://www.coursera.org/account/accomplishments/verify/KUTHXP6347VU" },
@@ -317,7 +318,7 @@ const Header = () => {
         {/* Logo/Name: Changed to "Portfolio" to avoid name duplication with the Hero section */}
         <h1 className={`text-2xl font-bold text-white transition-colors duration-300`}>
           <a href="#hero" onClick={(e) => { e.preventDefault(); scrollToSection('hero'); }} className="hover:text-blue-200 transition-colors">
-            Portfolio
+            SKC
           </a>
         </h1>
 
@@ -452,7 +453,7 @@ const Hero = () => {
 
       <div className="relative z-10 text-center px-4">
         {/* Adjusted font size for the name in Hero section */}
-        <h1 className="text-4xl md:text-6xl font-extrabold mb-4 pt-8 animate-fade-in-top">
+        <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold mb-4 pt-8 animate-fade-in-top">
           {resumeData.name}
         </h1>
         <p className="text-xl md:text-2xl font-light mb-8 animate-fade-in animation-delay-500">
