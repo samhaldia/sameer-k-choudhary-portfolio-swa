@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 // Google Analytics Measurement ID - REPLACE THIS WITH YOUR ACTUAL GA MEASUREMENT ID
-const GA_MEASUREMENT_ID = 'YOUR_GA_MEASUREMENT_ID'; // Example: 'G-XXXXXXXXXX'
+const GA_MEASUREMENT_ID = 'G-MZ53S12BKZ'; // Example: 'G-XXXXXXXXXX'
 
 // Data from Resume (extracted from resume.pdf)
 const resumeData = {
