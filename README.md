@@ -45,6 +45,7 @@ portfolio-site/
 ├── tailwind.config.js           # Tailwind CSS configuration file for utility-first styling
 └── README.md                    # This file, providing the project overview and instructions
 
+
 **Note**: For the purpose of providing a single, runnable immersive code block, the `data.js` content and all component definitions are currently consolidated within `App.js`. In a real-world project, you would separate these into their respective files as indicated in the structure above.
 
 ---
