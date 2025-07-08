@@ -13,7 +13,7 @@ const resumeData = {
     address: "Harvest Lane Phoenixville PA-19460",
     mobile: "+1 (484) 782-8476",
     email: "sameerkchoudhary14@gmail.com",
-    linkedin: "https://www.linkedin.com/in/sameer-k-choudhary", // Placeholder - please replace with actual LinkedIn URL
+    linkedin: "https://www.linkedin.com/in/sameer-kumar-choudhary", // Placeholder - please replace with actual LinkedIn URL
     github: "https://github.com/samhaldia", // Placeholder - please replace with actual GitHub URL
     drupal: "https://www.drupal.org/u/samhaldia", // Placeholder - please replace with actual Drupal URL
   },
