@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-
+import resumePDF from './documents/Sameer-Kumar-Choudhary-Resume.pdf'; // Adjust the path as needed
 // Google Analytics Measurement ID - REPLACE THIS WITH YOUR ACTUAL GA MEASUREMENT ID
 const GA_MEASUREMENT_ID = 'G-MZ53S12BKZ'; // Example: 'G-XXXXXXXXXX'
 
@@ -7,37 +7,37 @@ const GA_MEASUREMENT_ID = 'G-MZ53S12BKZ'; // Example: 'G-XXXXXXXXXX'
 const resumeData = {
   name: "Sameer Kumar Choudhary",
   title: "Senior Web Application Architect & Consultant",
-  summary: "Highly motivated Senior Web Application Architect & Consultant with over 9+ years of experience in architecting and delivering robust, scalable web solutions. Expertise in Python, PHP, and various CMS/LMS platforms, with a strong foundation in Azure cloud. Passionate about AI/ML and data technologies to build innovative, data-driven solutions. Proven ability to lead cross-functional teams in agile environments.",
+  summary: "Visionary Senior Web Application Architect & Consultant with 9+ years of experience, expertly delivering robust, scalable web solutions that consistently drive 60% efficiency gains, and 20% user satisfaction increases through strategic architecture, full-stack development (Python, PHP, Drupal, CMS/LMS), and Azure cloud integration. Passionate about leveraging AI/ML to build innovative, data-driven solutions and lead agile, cross-functional teams.",
   contact: {
 	name: "Sameer Kumar Choudhary",
     address: "Harvest Lane Phoenixville PA-19460",
     mobile: "+1 (484) 782-8476",
     email: "sameerkchoudhary14@gmail.com",
-    linkedin: "https://www.linkedin.com/in/sameerkchoudhary14", // Placeholder - please replace with actual LinkedIn URL
-    github: "https://github.com/sameerkchoudhary", // Placeholder - please replace with actual GitHub URL
-    drupal: "https://www.drupal.org/u/sameerkchoudhary", // Placeholder - please replace with actual Drupal URL
+    linkedin: "https://www.linkedin.com/in/sameer-k-choudhary", // Placeholder - please replace with actual LinkedIn URL
+    github: "https://github.com/samhaldia", // Placeholder - please replace with actual GitHub URL
+    drupal: "https://www.drupal.org/u/samhaldia", // Placeholder - please replace with actual Drupal URL
   },
   experience: [
     {
       company: "Capgemini America",
-      role: "Senior Software Engineer, Financial Services",
+      role: "Senior Consultant, Financial Services",
       dates: "July 2022 - Present",
       description: [
-        "Architected design and development of SEI Developer Portal using (Drupal, PostgreSQL, Nginx, APIGEE, Vagrant, SiteMinder, and PHP) focusing on scalability, performance, and security.",
-        "Spearheaded collaboration with cross-functional teams to migrate Developer Portal from Drupal 9 to Drupal 10 using Vagrant and Kubernetes, enhancing scalability and performance.",
-        "Created high-level design and architecture documents using Confluence to standardize and improve key developer portal processes such as Devportal segregation into public and private instances (improving security), User Onboarding (reducing onboarding time by 60%), API versioning reducing API Doc Creation time to 60 secs and Application onboarding with Apigee.",
-        "Architected and developed Custom Module for API Doc Versioning integrated with Bitbucket and Gitlab emphasizing modularity using Drupal's Entity Types, Fields API, and Taxonomy to structure API references for increased Developer experience.",
-        "Developed and customized Drupal Apigee modules to integrate with Apigee Edge for application analytics, API product management, and data flow for application creation and role-based access control (RBAC) for API products. Leveraged Redocly's framework to enhance API documentation readability, reducing support requests by 10%.",
-        "Architected the information architecture and Developer Portal experience by designing and implementing the Marketplace, File Integrations, Knowledgebase, and Blogs pages, leveraging Drupal Field APIs, Paragraphs, Views, Pathauto, Webforms, Layout Builder, Taxonomy, Entity API, and Entity Reference, Menu API, and Block System improving content management efficiency and information. Resulting in 20% increase in user satisfaction with site navigation.",
-        "Collaborated with the UI/UX design team via Figma for the development of the portal's enhanced and compelling user interface.",
-        "Developed automated support ticket creation for consumers to report product issues or recommendations.",
-        "Developed custom Drupal module to implement granular cookie consent, manage user preferences integration with OneTrust's Platform. Ensuring compliance with GDPR and CCPA regulations to adhere to data privacy best practices and reducing legal risk.",
-        "Engineered and customized website themes sing Drupal Paragraphs, ensuring responsive design, SEO optimization, and adherence to W3C/WCAG accessibility standards.",
-        "Responded to IBM Pen Test reports and contributed patching on priority.",
-        "Contributed to Developer Portal's security by adding Veracode and Burp Suite scans to the codebase and engaged in quarterly Veracode training to maintain awareness of evolving security practices.",
-        "Evaluated existing business processes and Presented findings and recommendations to executive-level stakeholders, effectively communicating key insights and action plans.",
-        "Onboarded and mentored novel resources, handled estimations, client interactions, requirement gathering, demos, project documentation, and deployments.",
-        "Developed internal web platforms using Python and Django for data visualization of User, Apps, Reports on API Docs, Broken link checker, and Alerts.",
+        "Standardized and improved key developer portal processes using Confluence, including Devportal segregation (enhancing security), User Onboarding (reducing time by 60%), API versioning (reducing API Doc creation time to 60 seconds), and Application onboarding with Apigee.",
+		"Architected and developed the SEI Developer Portal using Drupal, PostgreSQL, Nginx, APIGEE, Vagrant, SiteMinder, and PHP to ensure scalability, performance, and security.",
+		"Led migration of the Developer Portal from Drupal 9 to Drupal 10 using Vagrant and Kubernetes, enhancing scalability and performance.",
+		"Developed a custom module for API Doc Versioning integrated with Bitbucket and Gitlab, using Drupal's Entity Types, Fields API, and Taxonomy for improved Developer experience.",
+		"Customized Drupal Apigee modules for integration with Apigee Edge, enabling application analytics, API	product management, data flow for APP creation, and RBAC for API products. Enhanced API documentation readability using Redocly's framework, reducing support requests by 10%.",
+		"Designed and implemented the information architecture and Developer Portal experience, including Marketplace, File Integrations, Knowledgebase, and Blogs pages. Leveraged Drupal Field APIs, Paragraphs, Views, Webforms, Layout Builder, Taxonomy, Entity API, Entity Reference, and Block System to improve	content management efficiency. Achieved a 20% increase in user satisfaction with site navigation.",
+		"Collaborated with the UI/UX design team via Figma to develop the portal's enhanced user interface.",
+		"Developed automated support ticket creation for consumers to report product issues or recommendations, reducing manual support efforts by 25% and improving response time by an average of 2 hours.",
+		"Created a custom Drupal module for granular cookie consent and user preferences integration with OneTrust's Platform, ensuring compliance with GDPR and CCPA regulations to reduce legal risk.",
+		"Engineered and customized website themes using Drupal Paragraphs, ensuring responsive design, SEO optimization, and adherence to W3C/WCAG accessibility standards.",
+		"Addressed critical IBM Pen Test reports by contributing priority patches, significantly mitigating security vulnerabilities and ensuring system integrity.",
+		"Enhanced Developer Portal security by adding Veracode and Burp Suite scans to the codebase and engaging in	quarterly Veracode training to maintain awareness of evolving security practices.",
+		"Evaluated existing business processes and presented findings and recommendations to executive-level stakeholders, effectively communicating key insights and action plans.",
+		"Onboarded and mentored new resources, handled estimations, client interactions, requirement gathering,	demos, project documentation, and deployments.",
+		"Developed internal web platforms using Python and Django for data visualization of User, Apps, Reports on API	Docs, Broken link checker, and Alerts.",
       ],
     },
     {
@@ -45,11 +45,11 @@ const resumeData = {
       role: "Products & Services",
       dates: "2022 - Present (concurrent with Capgemini America)",
       description: [
-        "Designed and developed AI-driven services within an Agentic Framework, utilizing Azure AI Services and Cosmos DB, following microservices principles to enable independent scaling and deployment of AI functionalities.",
-        "Developing an automated AI agent for WCAG, ADA Compliance, SEO and other Web standards checker and report generator.",
-        "Led the ideation and development of various use cases including intelligent document automation for contract and subscription document processing.",
-        "Collaborated in a Team size of 6 people to develop internal AI agents (FOSS Approval Request Form, SEI GPT for knowledgebase) using Streamlit, LangGraph, LangChain Azure OpenAI for Agentic Framework.",
-        "Designed and conceptualized AI agent integration with the Apigee Developer Portal, projecting a 50% increase in user visits and interactions.",
+        "Designed and developed AI-driven services within an Agentic Framework using Azure AI Services and CosmosDB, following microservices principles to enable independent scaling and deployment of AI functionalities.",
+		"Developed an automated AI agent for WCAG, ADA Compliance, SEO, and other web standards checking and report generation.",
+		"Led the ideation and development of various use cases collaborated on intelligent document automation for contract and subscription document processing.",
+		"Collaborated with a team of 3 to develop internal AI agents (FOSS Approval Request Form, SEI GPT for knowledgebase) using Streamlit, LangGraph, LangChain, and Azure OpenAI for the Agentic Framework.",
+		"Designed and conceptualized AI agent integration with the Apigee Developer Portal, projecting a 50% increase in user visits and interactions.",
       ],
     },
     {
@@ -58,15 +58,15 @@ const resumeData = {
       dates: "April 2019 - July 2022",
       description: [
         "Collaborated on new architecture design and development plan of SEI Developer Portal for more secure and robust platform.",
-        "Migrated SEI Developer Portal from Drupal 7 to new symphony architecture of Drupal 9 successfully with immediate result in performance and access.",
-        "Collaborated with the UI/UX design team via Figma for the development of the portal's user interface.",
-        "Supported infrastructure setup and configuration in various environments.",
-        "Implemented user onboarding flow integrating SiteMinder, Apigee, Jira, and Drupal.",
-        "Implemented Postman Collection embeddings to API Docs for better Developer experience.",
-        "Custom Drupal Module to Integrate Matomo Analytics to SEI Developer Portal for User & Event tracking and reporting.",
-        "Design, Development and Maintenance of Developer portal using Drupal 7, Apigee, PostgreSQL, Nginx.",
-        "Developed custom Drupal Module dynamic PDF generation from API Products pages supporting SEI brandings and standards using PHP Libraries leading to 50% increase in page visits.",
-        "Responded to Pen Test reports and coordinated patching it on priority.",
+		"Migrated SEI Developer Portal from Drupal 7 to new symphony architecture of Drupal 9 successfully with	immediate result in performance and access.",
+		"Collaborated with the UI/UX design team via Figma for the development of the portal's user interface.",
+		"Supported infrastructure setup and configuration in various environments.",
+		"Implemented user onboarding flow integrating SiteMinder, Apigee, Jira, and Drupal.",
+		"Implemented Postman Collection embeddings to API Docs for better Developer experience.",
+		"Custom Drupal Module to Integrate Matomo Analytics to SEI Developer Portal for User & Event tracking and reporting.",
+		"Design, Development and Maintenance of Developer portal using Drupal 7, Apigee, PostgreSQL, Nginx.",
+		"Engineered a custom Drupal Module for dynamic PDF generation from API Product pages, adhering to SEI branding and standards via PHP Libraries, resulting in a 50% increase in page visits and enhanced content	engagement.",
+		"Responded to Pen Test reports and coordinated patching it on priority.",
       ],
     },
     {
@@ -78,7 +78,7 @@ const resumeData = {
             "Rebuilt AirClass websites in Drupal 7 hosted on Acquia and local setup using Acquia Dev Desktop.",
             "Migrated AirClass from Drupal 7 to Drupal 8, upgrading custom Modules and custom theme to Drupal 8 standards.",
             "Revamped Internal e-Learning website of LiquidHub built using LAMP stack and Moodle as LMS.",
-            "Redesigned PACT WordPress websites to new design, with complex functionality of integrating Annual Award Webform, workflows and with considerations to WCAG standards and SEO.",
+            "Redesigned PACT WordPress websites to new design, integrating Annual Award Webform and workflows, resulting in improved user engagement and streamlined award submissions while adhering to WCAG standards and SEO best practices.",
             "Integrated Google Analytics to PACT WordPress portal for monitoring user traffic and event tracking.",
             "Integration of Salesforce CRM and Zoho CRM with Drupal portals.",
             "Redesigned Counsyl WordPress website to new design with integrations to APIs, Google Analytics and Job Board.",
@@ -102,9 +102,14 @@ const resumeData = {
         role: "Software Engineer, Digital Practice",
         dates: "January 2017 - March 2017",
         description: [
-            "Worked on customizing Flyingkart E-commerce website using CakePHP, MySQL, HTML, CSS3 and Bootstrap to build a Responsive Design.",
-            "Explored and ideated to have Web as Mobile app. Developed a basic APK Android studio to be hosted at Playstore, leading to 50% increase in User visits.",
-            "Worked on Integrating Google Analytics to the website to capture User visits, journeys and clicks.",
+            "Customized Flyingkart E-commerce website with a responsive design using CakePHP, MySQL, HTML, CSS3, and Bootstrap, boosting mobile traffic and conversion rates.",
+			"Explored and ideated to have Web as Mobile app. Developed a basic APK Android studio to be hosted at Playstore, leading to 50% increase in User visits.",
+			"Worked on Integrating Google Analytics to the website to capture User visits, journeys and clicks.",
+			"Redesigned the portal and UI to a User centric navigations and access, leading to more user traffic on the	portal.",
+			"Collaborated with cross-functional teams to successfully deliver comprehensive solutions for clients.",
+			"Implemented customer relationship management (CRM) systems, improving client engagement and retention rates.",
+			"Worked on capacity building in e-Learning technologies using Moodle and SCORM standards.",
+			"Collaborated on Request for Proposals for Technical design and Questionnaire to support RFP Team.9",
         ]
     },
     {
@@ -116,12 +121,14 @@ const resumeData = {
             "Developed 23 Multi-Lingual and Multi-Site Portals having 50K Users using Plone CMS and Python leveraging its MVC-like architecture to manage complex content and user interactions as Full Stack Developer.",
             "Developed and Introduced OTP based login and Integrated SSO using LDAP and increased the user onboarding and visits by 50%.",
             "Conceptualized and Integrated Related Languages Content Links Portlet feature in 23 Portals for similar contents in Web Page based on Page Metadata, leading to increase in visit of Users on each portal by 25%",
-            "Integration of Keyboard support for multiple Indian Languages using jQuery Libraries and Screen reader as part of WCAG compliance initiatives.",
+            "Integrated of Keyboard support for multiple Indian Languages using jQuery Libraries and Screen reader as part of WCAG compliance initiatives.",
             "Enhancement and Development of GUI of Vikaspedia Home pages with different Home page Doodles and Internal Pages (Donors, Mobile Applications, Volunteers, SNA's etc.), leading to increase user visits on the landing page.",
-            "Development of multi-site architecture for in a single Plone instance to optimize the resource usage",
+            "Developed of multi-site architecture for in a single Plone instance to optimize the resource usage",
             "Developed and maintained RESTful APIs, ensuring adherence to REST principles for seamless integration and data accessibility.",
             "Automated e-Delivery of monthly newsletters to more more than 62,000 users which improved traffic",
-            "Python Trainer for students of C-DAC's DITISS (PG Diploma in IT Infrastructure Systems and Security) for consecutive 2 batches.",
+			"Developed products and services (Recaller, EOI, Ask an Expert, e-CHARAK) to provide a wide range of offerings.",
+			"Integrated Google Analytics for traffic review and analysis.",
+            "Trained students in Python at C-DAC's DITISS (PG Diploma in IT Infrastructure Systems and Security) for two consecutive batches",
             "Provided technical expertise throughout all phases of the project, ensuring accurate execution of designs and specifications.",
             "Engaged in industry forums and workshops to stay abreast of new trends and technologies, applying insights to enhance project performance.",
             "Conducted research to identify and evaluate new technologies and concepts.",
@@ -218,28 +225,42 @@ const resumeData = {
       description: "To automate customer experience and enquiries using Drupal and AI",
       technologies: ["AI", "Drupal", "NLP"],
       link: "#", // Placeholder
-      githubLink: "https://github.com/sameerkchoudhary/drupal-chatbot" // Placeholder
+      githubLink: "https://github.com/samhaldia/drupal_chatbot" // Placeholder
     },
     {
       title: "Twitter Tweets",
       description: "To enhance social media engagement with configurable blocks",
       technologies: ["Twitter API", "Drupal", "Blocks"],
       link: "#", // Placeholder
-      githubLink: "https://github.com/sameerkchoudhary/twitter-tweets-module" // Placeholder
+      githubLink: "https://github.com/samhaldia/twitter_tweets_block" // Placeholder
     },
     {
       title: "SAUKHYAMASTHU",
       description: "A web Platform for Self-Reporting, Visualizations & Insights, COVID-19 Information to combat Pandemic",
       technologies: ["IBM Cloud", "DB2", "Python", "Flask", "IBM Watson"],
       link: "#", // Placeholder
-      githubLink: "https://github.com/sameerkchoudhary/SAUKHYAMASTHU" // Placeholder
+      githubLink: "https://github.com/samhaldia/SAUKHYAMASTHU" // Placeholder
     },
     {
       title: "PDF-Deidentification",
       description: "Web Based Tool to De-Identify or Redact PII information in PDF or Receipts before publishing",
       technologies: ["Python", "Django", "Python Libraries- pdfminer", "pdfrw", "OpenCV"],
       link: "#", // Placeholder
-      githubLink: "https://github.com/sameerkchoudhary/PDF-Deidentification" // Placeholder
+      githubLink: "https://github.com/samhaldia/pdf-deidentification" // Placeholder
+    },
+	{
+      title: "Face-Recognition",
+      description: "A Simple Face Recognition Application using Python, OpenCV and Scikit-Learn on Custom Built Data Set",
+      technologies: ["Python", "Django", "Scikit-Learn", "dlib", "svm", "OpenCV", "Bing-Search-API"],
+      link: "#", // Placeholder
+      githubLink: "https://github.com/samhaldia/face-recognition" // Placeholder
+    },
+	{
+      title: "Drowsiness-Detection",
+      description: "Drowsiness detection - web/mobile app for alerting Drivers",
+      technologies: ["Python", "Django", "dlib", "OpenCV", "Lve Steam App"],
+      link: "#", // Placeholder
+      githubLink: "https://github.com/samhaldia/Drowsiness-Detection" // Placeholder
     },
   ],
   education: [
@@ -357,7 +378,7 @@ const Header = () => {
             </a>
           ))}
           <a
-            href="https://drive.google.com/file/d/1zVi7EY5hHJIpi4uRckdgGUX0qnsNfWYy/view?usp=sharing" // Placeholder for resume download
+            href={resumePDF} // Placeholder for resume download
             target="_blank"
             rel="noopener noreferrer"
             className="bg-white text-cyan-700 px-5 py-2 rounded-full shadow-lg hover:bg-cyan-100 transition-all duration-300 transform hover:scale-105"
@@ -379,7 +400,7 @@ const Header = () => {
             </a>
           ))}
           <a
-            href="https://drive.google.com/file/d/1zVi7EY5hHJIpi4uRckdgGUX0qnsNfWYy/view?usp=sharing" // Placeholder for resume download
+            href={resumePDF} // Placeholder for resume download
             target="_blank"
             rel="noopener noreferrer"
             className="block text-center mt-4 bg-cyan-500 text-white px-5 py-2 rounded-full shadow-lg hover:bg-cyan-600 transition-all duration-300 transform hover:scale-105"
