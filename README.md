@@ -18,7 +18,7 @@ The portfolio site is designed to serve as a comprehensive online resume and a p
 ### Project Structure
 
 For a typical React application, the structure would look like this:
-
+``````
 portfolio-site/
 ├── public/
 │   └── index.html               # Main HTML file serving as the entry point for your web application
@@ -44,7 +44,7 @@ portfolio-site/
 ├── postcss.config.js            # PostCSS configuration file for CSS processing
 ├── tailwind.config.js           # Tailwind CSS configuration file for utility-first styling
 └── README.md                    # This file, providing the project overview and instructions
-
+``````
 
 **Note**: For the purpose of providing a single, runnable immersive code block, the `data.js` content and all component definitions are currently consolidated within `App.js`. In a real-world project, you would separate these into their respective files as indicated in the structure above.
 
